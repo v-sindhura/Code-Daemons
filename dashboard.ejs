@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                background: url(https://blog.buildingconnected.com/wp-content/uploads/2018/08/DarkBluePattern_background-600x403.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            table {
+                border-collapse: solid border 1px;
+                width: 100%;
+            }
+            th{
+                color:#fff;
+                font-size:20px;
+            }
+            th, td {
+                text-align: center;
+                padding: 8px;
+            }
+            td{
+                height:30px;
+                color:#fff;
+                text-align:center;
+            }
+            h2{
+                margin: 30;
+                padding: 0 0 20px;
+                text-align: center;
+                font-size: 40px;
+                top: 95%;
+                color: #fff;
+            }
+
+            tr:nth-child(even) {background-color: #ff4d4d;}
+        </style>
+    </head>
+    <body>
+        <h2>Dashboard</h2>
+        <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Attempt Number</th>
+                    <th>QuestionID</th>
+                    <th>Right Answers</th>
+                    <th>Wrong Answers</th>
+                    <th>Points</th>
+                </tr>
+                <%for(var i=0;i<dashr.length;i++){ %>
+                <tr>
+                    <td><%=i+1%></td>
+                    <td><%=dashr[i].qid%></td>
+                    <td><%=dashr[i].rightans%></td>
+                    <td><%=dashr[i].wrongans%></td>
+                    <td><%=dashr[i].points%></td>
+                </tr>
+                <%}%>
+            </table>
+        </div>
+<a href="/homepage/<%=u%>"><button>Back</button></a>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Code Daemons</title>
+        <style>
+            html{
+                background-color:#000;
+                text-decoration:none;
+                font-family:'Roboto',sans-serif;
+                color:#FFFFFF;
+                background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSK9uVkjdkvoH6v-Y5DVVF5ScSxHFS_SufdKt8onlcbTjXf0HTt");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+
+            }
+            h1{
+                text-align:center;
+                font-size:50px;
+            }
+            .container{
+                text-align:center;
+            }
+            .bouncy{
+                animation:bouncy 2s infinite linear;
+                position:relative;
+            }
+            @keyframes bouncy {
+                0%{top:0em}
+                40%{top:0em}
+                43%{top:-0.9em}
+                46%{top:0em}
+                48%{top:-0.4em}
+                50%{top:0em}
+                100%{top:0em;}
+            }
+            a.button1{
+                display:inline-block;
+                padding:0.35em 1.2em;
+                border:0.1em solid #FFFFFF;
+                margin:0 0.3em 0.3em 0;
+                border-radius:0.12em;
+                box-sizing: border-box;
+                text-decoration:none;
+                font-family:'Roboto',sans-serif;
+                font-weight:300;
+                color:#FFFFFF;
+                text-align:center;
+                transition: all 0.6s;
+            }
+            a.button1:hover{
+                color:#000000;
+                background-color:#FFFFFF;
+            }
+            @media all and (max-width:30em){
+                a.button1{
+                    display:block;
+                    margin:0.4em auto;
+                }
+            }
+            HTML
+        </style>
+    </head>
+    <body>
+        <h1>Code Daemons</h1>
+        <div class="container">
+            <a href="/signup" class="button1 bouncy">Sign Up</a>
+            <a href="/login" class="button1 bouncy" style="animation-delay:0.5s">Log In</a>
+        </div>
+    </body>
+</html>

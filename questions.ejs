@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1 {
+                margin: 30;
+                padding: 0 0 20px;
+                text-align: center;
+                font-size: 22px;
+                top: 50%;
+                color:#fff;
+                font-size: 50px;
+
+            }
+            h2 {       position:relative;
+                text-align: left;
+                font-size: 22px;
+                color:#660066;
+                font-size: 20px;
+
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                background: url(https://blog.buildingconnected.com/wp-content/uploads/2018/08/DarkBluePattern_background-600x403.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .accordion {
+                margin-top: 10px;
+                background-color: #ccff99;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                height:60px;
+                text-align: left;
+                border: none;
+                outline: none;
+                transition: 0.4s;
+            }
+
+            .active, .accordion:hover {
+                background-color: #d1d1e0;
+            }
+
+            .accordion:before {
+                content: '\002B';
+                color: #777;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+
+            .active:before {
+                content: "\2212";
+            }
+
+            .panel {
+                padding: 0 18px;
+                background-color: white;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+            }
+
+            button { 
+                border: none;
+                background-color: #f44336;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 12px;
+                margin:2px;
+                border-radius: 8px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+
+
+
+        <h1>Coding Questions</h1>
+        <%for(var i=0;i<questionr.length;i++){%>
+        <button class="accordion"><h2><%=questionr[i].qname%></h2></button> 
+        <form class="panel" action="/<%=u%>/editor/<%=questionr[i].qid%>">
+            <p><%=questionr[i].ques%>
+            </p>
+            <button type="submit" value="Try" >Try</button>
+        </form>
+        <a href="/<%=u%>/solution/<%=questionr[i].qid%>"><button>View Solution</button></a>
+        <%}%>
+
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight){
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+                });
+            }
+        </script>
+
+    </body>
+</html>

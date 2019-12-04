@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Editor</title>
+        <style>
+            html{
+                background-color:black;
+                color:white;
+                font-size:20px;
+            }
+            input{
+                width:70%;
+                margin:3px;
+                padding:9px;
+                border:4px grey;
+                border-style:ridge;
+                border-radius:30px;
+            }
+            button{
+                background-color: white; /* Green */
+                border: none;
+                color: #008CBA;
+                padding: 8px 32px;
+                text-align: center;
+                font-size: 16px;
+                margin: 4px 2px;
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+                border-radius:40px;
+                border: 4px solid #555555;
+            }
+            button:hover{
+                background-color: #555555;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Question: <%=questionr[0].qname%></p>
+        <p><%questionr[0].ques%></p>
+        <p>Enter the missing codes in the blanks!!</p>
+        <p>Remember to not addd any unnecessary spaces in the code</p>
+        <div class= "q1">
+            <script src=<%=questeditr[0].qp1%> type="text/javascript"></script>
+        </div>
+        <form method="post" action="/<%=u%>/editsubmit/<%=questionr[0].qid%>">
+            <input type="text" placeholder="Enter missing code" name="bb1" required>
+            <br>
+            <input type="text" placeholder="Enter missing code" name="bb2" required>
+            <br>
+            <input type="text" placeholder="Enter missing code" name="bb3" required>
+            <br>
+            <input type="text" placeholder="Enter missing code" name="bb4" required>
+            <br>
+            <input type="text" placeholder="Enter missing code" name="bb5" required>
+            <br>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <br>
+        </form>
+        <br>
+        <div class= "q2">
+            <script src=<%=questeditr[0].qp2%> type="text/javascript"></script>
+        </div>
+        <a href="/homepage/<%=u%>"><button type="submit">Back</button></a>
+    </body>
+</html>

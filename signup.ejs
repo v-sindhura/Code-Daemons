@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign up</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: url(https://scienceworld.scholastic.com/content/dam/classroom-magazines/scienceworld/issues/2017-18/121117/computer-coder/SW-121117-Coder-Popup1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .loginbox
+        {
+            width: 320px;
+            height: 550px;
+            background: #022237;
+            color: #fff;
+            top: 10%;
+            left: 10%;
+            position: absolute;
+            transform: translate(-50% -50%);
+            box-sizing: border-box;
+            padding: 70px 30px;
+            border-radius: 50px;
+            opacity: 0.9;
+                
+        }
+        h1
+        {
+            margin: 0;
+            padding: 0 0 20px;
+            text-align: center;
+            font-size: 22px;
+            top: 50%;
+        }
+        .loginbox p
+        {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+        .loginbox input
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .loginbox input[type="text"], input[type="password"]
+        {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .loginbox input[type="submit"]
+        {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: #fb2525;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+        .loginbox input[type="submit"]:hover
+        {
+            cursor: grabbing;
+            background: #ffc107;
+            color: #000;
+        }
+        .loginbox a
+        {
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 20px;
+            color: white;
+        }
+        .loginbox a:hover
+        {
+            color: #ffc107;
+        }
+
+    
+    </style>
+    
+    <script type="text/javascript">
+            function validateform(){  
+                    var name=document.myform.username.value;
+                    var email=document.myform.email.value; 
+                    var password=document.myform.password.value;  
+                    var password2=document.myform.password2.value;
+                    console.log(name);
+                    if (name==null || name==""){  
+                        alert("Name can't be blank");
+                            return false;  
+                    }
+                    else if(email==null || email=="" ){  
+                        alert("Email can't be blank");  
+                        return false;  
+                    }
+                    else if (email.indexOf("@", 0) < 0 ||  email.indexOf(".", 0) < 0)         
+                    { 
+                        alert("Please enter a valid e-mail address.");  
+                        return false; 
+                    } 
+                    else if(password==null || password==""){  
+                        alert("Password must be at least 6 characters long.");  
+                        return false;  
+                    }
+                    else if(password.length<6){  
+                        alert("Password must be at least 6 characters long.");  
+                        return false;  
+                    }
+                    else if(password2==null || password2==""){
+                        alert("Please enter confirmation password.");  
+                        return false; 
+                    }
+                    else if(password != password2){
+                        alert("Passwords do not match!");
+                        return false;
+                    }
+
+                    return true;  
+                } 
+        </script>
+    </head>
+    <body>
+    <div class="loginbox">
+        <kbd>
+        <h1>Sign Up</h1>
+        <form name="myform" action="/signup" method="post" onsubmit="return validateform()">
+        <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Email</p>
+            <input type="text" name="email" placeholder="&#9993 Enter Email">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <p>Confirm Password</p>
+            <input type="password" name="password2" placeholder="Confirm Password">
+            <input type="submit" value="SignUp"> 
+            <br>
+            <a href="/login">Already a member?</a><br>
+            <a href="/signup">Don't have an account?</a>
+        </form>
+        </kbd>
+        </div>
+    </body>
+</html>
